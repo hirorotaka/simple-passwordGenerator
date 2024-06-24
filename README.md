@@ -49,3 +49,6 @@
    ```
 
 4. ブラウザを開き、`http://localhost:5173` にアクセスして、アプリの動作を確認します。
+
+5. こちらの画面が表示されたらOK
+![スクリーンショット 2024-06-24 16 07 38](https://github.com/hirorotaka/React-TS-TailwindCss-vite-Vscode-templete/assets/153050316/f150e6fa-4d67-4b99-af3e-13123d4b795a)
