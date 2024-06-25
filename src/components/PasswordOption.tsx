@@ -71,7 +71,7 @@ export const PasswordOption = ({
             checked={options.uppercase}
             onChange={handleChangeCheckbox}
           />
-          大文字
+          英大文字
         </label>
         <label className="mb-2 mr-4 flex items-center">
           <input
@@ -81,7 +81,7 @@ export const PasswordOption = ({
             checked={options.lowercase}
             onChange={handleChangeCheckbox}
           />
-          小文字
+          英小文字
         </label>
         <label className="mb-2 mr-4 flex items-center">
           <input

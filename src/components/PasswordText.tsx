@@ -1,10 +1,27 @@
+import { useState } from 'react';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckIcon from '@mui/icons-material/Check';
 
 interface Props {
   password: string;
 }
 
 export const PasswordText = ({ password }: Props): JSX.Element => {
+  const [copied, setCopied] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(password);
+      setCopied(true);
+      setShowTooltip(true);
+      setTimeout(() => setCopied(false), 1000);
+      setTimeout(() => setShowTooltip(false), 1000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
   return (
     <div className="relative mt-4">
       <input
@@ -16,11 +33,16 @@ export const PasswordText = ({ password }: Props): JSX.Element => {
         placeholder="生成されたパスワード"
       />
       <button
-        id="copy"
+        onClick={handleCopy}
         className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-sky-700"
       >
-        <ContentCopyIcon />
+        {copied ? <CheckIcon /> : <ContentCopyIcon />}
       </button>
+      {showTooltip && (
+        <div className="absolute right-2 top-full mt-2 w-max rounded bg-gray-700 px-2 py-1 text-sm text-white">
+          {copied ? 'コピーしました' : ''}
+        </div>
+      )}
     </div>
   );
 };
