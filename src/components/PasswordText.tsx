@@ -2,14 +2,15 @@ import { useState } from 'react';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
 
-interface Props {
+interface PasswordTextProps {
   password: string;
 }
 
-export const PasswordText = ({ password }: Props): JSX.Element => {
+export const PasswordText = ({ password }: PasswordTextProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
+  // テキストコピー
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(password);
