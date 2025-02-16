@@ -1,6 +1,6 @@
-# React + TypeScript + Vite
+# パスワードジェネレータの作成
 
-パスワードの作成
+- URL:https://simple-passwordgenerator.netlify.app
 
 ### 概要
 
@@ -13,4 +13,5 @@
 - 生成されたパスワードはクリップボードにコピーできる。
 
 ### 画面
+
 ![chrome-capture-2024-6-25](https://github.com/hirorotaka/simple-passwordGenerator/assets/153050316/5b1580db-b247-4cbd-a527-57d5a2dc829f)
