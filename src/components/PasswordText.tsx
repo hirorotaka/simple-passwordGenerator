@@ -2,11 +2,11 @@ import { useState } from 'react';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
 
-interface PasswordTextProps {
+type PasswordTextProps = {
   password: string;
-}
+};
 
-export const PasswordText = ({ password }: PasswordTextProps): JSX.Element => {
+export const PasswordText = ({ password }: PasswordTextProps) => {
   const [copied, setCopied] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 

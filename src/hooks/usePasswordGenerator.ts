@@ -1,28 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Options } from '../type/types';
-
-type useLettersType = 'uppercase' | 'lowercase' | 'numbers' | 'symbols';
-
-// 文字のリスト
-export const useLetters: Record<useLettersType, string> = {
-  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  lowercase: 'abcdefghijklmnopqrstuvwxyz',
-  numbers: '0123456789',
-  symbols: '!@#$%^&*()',
-};
-
-// 類似文字のリスト
-export const similarCharacters: readonly string[] = [
-  '1',
-  'I',
-  'j',
-  'i',
-  'l',
-  'O',
-  'o',
-  'L',
-  'Z',
-];
+import { Options } from '../types';
+import { similarCharacters, useLetters } from '../constants';
 
 const initialOptions: Options = {
   uppercase: true,
@@ -33,17 +11,7 @@ const initialOptions: Options = {
   noRepeat: false,
 };
 
-interface usePasswordGeneratorReturn {
-  password: string;
-  options: typeof initialOptions;
-  sliderValue: number;
-  isGenerateButtonDisabled: boolean;
-  setOptions: React.Dispatch<React.SetStateAction<typeof initialOptions>>;
-  setSliderValue: React.Dispatch<React.SetStateAction<number>>;
-  handleGeneratePassword: () => void;
-}
-
-export const usePasswordGenerator = (): usePasswordGeneratorReturn => {
+export const usePasswordGenerator = () => {
   const [password, setPassword] = useState<string>('aaaa');
   const [options, setOptions] = useState(initialOptions);
   const [isGenerateButtonDisabled, setIsGenerateButtonDisabled] =

@@ -1,12 +1,12 @@
-interface Props {
+type GeneratePasswordButtonProps = {
   handleGeneratePassword: () => void;
   isGenerateButtonDisabled: boolean;
-}
+};
 
 export const GeneratePasswordButton = ({
   handleGeneratePassword,
   isGenerateButtonDisabled,
-}: Props): JSX.Element => {
+}: GeneratePasswordButtonProps) => {
   return (
     <button
       onClick={handleGeneratePassword}

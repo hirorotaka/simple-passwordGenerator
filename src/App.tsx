@@ -1,9 +1,9 @@
-import './App.css';
 import { ToolTitle } from './components/ToolTitle.tsx';
 import { PasswordOption } from './components/PasswordOption.tsx';
 import { GeneratePasswordButton } from './components/GeneratePasswordButton.tsx';
 import { PasswordText } from './components/PasswordText.tsx';
 import { usePasswordGenerator } from './hooks/usePasswordGenerator.ts';
+import './App.css';
 
 function App() {
   const {

@@ -1,4 +1,9 @@
-import { PasswordSliderProps } from '../type/types';
+import { Dispatch, SetStateAction } from 'react';
+
+type PasswordSliderProps = {
+  sliderValue: number;
+  setSliderValue: Dispatch<SetStateAction<number>>;
+};
 
 export const PasswordSlider = ({
   sliderValue,

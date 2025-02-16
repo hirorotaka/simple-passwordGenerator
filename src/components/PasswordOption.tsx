@@ -1,15 +1,40 @@
-import { PasswordOptionProps } from '../type/types';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { CheckboxGroup } from './CheckboxGroup';
 import { PasswordSlider } from './PasswordSlider';
+
+type PasswordOptionProps = {
+  sliderValue: number;
+  setSliderValue: Dispatch<SetStateAction<number>>;
+
+  options: {
+    uppercase: boolean;
+    lowercase: boolean;
+    numbers: boolean;
+    symbols: boolean;
+    excludeSimilar: boolean;
+    noRepeat: boolean;
+  };
+
+  setOptions: Dispatch<
+    SetStateAction<{
+      uppercase: boolean;
+      lowercase: boolean;
+      numbers: boolean;
+      symbols: boolean;
+      excludeSimilar: boolean;
+      noRepeat: boolean;
+    }>
+  >;
+};
 
 export const PasswordOption = ({
   sliderValue,
   setSliderValue,
   options,
   setOptions,
-}: PasswordOptionProps): JSX.Element => {
+}: PasswordOptionProps) => {
   // チェックボックスでチェックしたらstateに反映
-  const handleChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
 
     setOptions((prevOptions) => ({
